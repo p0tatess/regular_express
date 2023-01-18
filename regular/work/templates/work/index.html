@@ -8,12 +8,25 @@
 <form action="" method="POST">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="Submit" name="submit" value="Submit">
+    <input type="Submit" name="submit" value="re.search">
+    <input type="Submit" name="submit" value="re.match">
+    <input type="Submit" name="submit" value="re.findall">
+    <input type="Submit" name="submit" value="re.split">
+<!--    <input type="Submit" name="submit" value="re.sub">-->
+<!--    <input type="Submit" name="submit" value="re.subn">-->
+<!--    <input type="Submit" name="submit" value="re.escape">-->
 </form>
-{% if submitbutton == "Submit" %}
 <h1>Строка: {{ lining }}</h1>
 <h1>Регулярное выражение: {{ regularexpress }}</h1>
-<h1>Результат: {{ regexp }}</h1>
+{% if submitbutton == "re.search" %}
+
+    <h1>Результат: {{ regexp }}</h1>
+{% elif submitbuttonmatch == 're.match'%}
+    <h1>Результат: {{ regexp }}</h1>
+{% elif submitbuttonmatch == 're.findall'%}
+    <h1>Результат: {{ regexp }}</h1>
+{% else %}
+    <h1>Результат: {{ regexp }}</h1>
 {% endif %}
 
 </body>
