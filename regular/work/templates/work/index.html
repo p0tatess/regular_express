@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="Submit" name="submit" value="Submit">
+</form>
+{% if submitbutton == "Submit" %}
+<h1>Строка: {{ lining }}</h1>
+<h1>Регулярное выражение: {{ regularexpress }}</h1>
+<h1>Результат: {{ regexp }}</h1>
+{% endif %}
+
+</body>
+</html>
