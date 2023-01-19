@@ -1,33 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Regular-express</title>
+    <link type="text/css" href="{% static 'work/css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-<form action="" method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-    <input type="Submit" name="submit" value="re.search">
-    <input type="Submit" name="submit" value="re.match">
-    <input type="Submit" name="submit" value="re.findall">
-    <input type="Submit" name="submit" value="re.split">
-<!--    <input type="Submit" name="submit" value="re.sub">-->
-<!--    <input type="Submit" name="submit" value="re.subn">-->
-<!--    <input type="Submit" name="submit" value="re.escape">-->
-</form>
-<h1>Строка: {{ lining }}</h1>
-<h1>Регулярное выражение: {{ regularexpress }}</h1>
-{% if submitbutton == "re.search" %}
+<div class = 'block'>
+    <form action="" method="POST">
+        {% for field in form  %}
+             <div class="form-group">
+                {% csrf_token %}
+                 {{ field.label }}
+                 {{ field }}
+        {% endfor %}
+            </div>
+         <br>
+                 <input type="Submit" name="submit" value="re.search">
+                 <input type="Submit" name="submit" value="re.match">
+                 <input type="Submit" name="submit" value="re.findall">
+                 <input type="Submit" name="submit" value="re.split">
+    </form>
+    <h3>Строка: {{ lining }}</h3>
+    <h3>Регулярное выражение: {{ regularexpress }}</h3>
+    {% if submitbutton == "re.search" %}
 
-    <h1>Результат: {{ regexp }}</h1>
-{% elif submitbuttonmatch == 're.match'%}
-    <h1>Результат: {{ regexp }}</h1>
-{% elif submitbuttonmatch == 're.findall'%}
-    <h1>Результат: {{ regexp }}</h1>
-{% else %}
-    <h1>Результат: {{ regexp }}</h1>
-{% endif %}
-
+        <h3>Результат: {{ regexp }}</h3>
+    {% elif submitbuttonmatch == 're.match'%}
+        <h3>Результат: {{ regexp }}</h3>
+    {% elif submitbuttonmatch == 're.findall'%}
+        <h3>Результат: {{ regexp }}</h3>
+    {% else %}
+        <h3>Результат: {{ regexp }}</h3>
+    {% endif %}
+</div>
 </body>
 </html>

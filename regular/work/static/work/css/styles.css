@@ -1,0 +1,16 @@
+body{
+    margin:0px;
+    background-color: #f4eae9;
+}
+.block{
+    position:fixed;
+    top:200px;
+    left: 570px;
+    background-color: white;
+    border: solid red 6px;
+    border-radius: 25px;
+    padding: 7px;
+}
+.form-group #id_line, #id_regular_express {
+    width: 350px;
+}
